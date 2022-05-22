@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {CustomTranslateService} from './_services/custom-translate.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  constructor(private translateService: CustomTranslateService) {
+    this.translateService.setLoadedOrDefaultLanguage();
+  }
+
 }
